@@ -124,6 +124,13 @@ namespace Calculator
             if (lblHienThi.Text != "")
                 lblHienThi.Text = (lblHienThi.Text).Substring(0, lblHienThi.Text.Length - 1);
         }
+
+        private void btnNho_Click(object sender, EventArgs e)
+        {
+
+            nho = 0;
+            lblHienThi.ResetText();
+        }
     }
     }
     

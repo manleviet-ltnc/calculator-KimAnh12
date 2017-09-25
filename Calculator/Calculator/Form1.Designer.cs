@@ -260,6 +260,7 @@
             this.btnNho.TabIndex = 1;
             this.btnNho.Text = "C";
             this.btnNho.UseVisualStyleBackColor = true;
+            this.btnNho.Click += new System.EventHandler(this.btnNho_Click);
             // 
             // btnXoa
             // 
