@@ -37,6 +37,7 @@ namespace Calculator
         }
 
         double nho;
+        bool pressed = false;
 
         private void NhapPhepToan(object sender, EventArgs e)
         {
@@ -96,6 +97,34 @@ namespace Calculator
                     NhapSo("" + e.KeyChar);
                     break;
             }
+        
+
+           
+            }
+
+        private void btnCan_Click(object sender, EventArgs e)
+        {
+            double Can = double.Parse(lblHienThi.Text);
+            lblHienThi.Text = Math.Sqrt(Can).ToString();
+
+        }
+
+        private void btnPhanTram_Click(object sender, EventArgs e)
+        {
+            lblHienThi.Text = (double.Parse(lblHienThi.Text) / 100).ToString();
+        }
+
+        private void btnDoiDau_Click(object sender, EventArgs e)
+        {
+            lblHienThi.Text = (-1 * double.Parse(lblHienThi.Text)).ToString();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (lblHienThi.Text != "")
+                lblHienThi.Text = (lblHienThi.Text).Substring(0, lblHienThi.Text.Length - 1);
         }
     }
-}
+    }
+    
+
