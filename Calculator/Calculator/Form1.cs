@@ -37,7 +37,7 @@ namespace Calculator
         }
 
         double nho;
-        bool pressed = false;
+        
 
         private void NhapPhepToan(object sender, EventArgs e)
         {
