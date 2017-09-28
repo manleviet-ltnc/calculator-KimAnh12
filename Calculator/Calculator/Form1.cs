@@ -134,7 +134,7 @@ namespace Calculator
         {
 
             nho = 0;
-            lblHienThi.ResetText();
+            lblHienThi.Text="0.";
         }
 
         private void btnThapPhan_Click(object sender, EventArgs e)
@@ -143,6 +143,7 @@ namespace Calculator
                 return;
             lblHienThi.Text += btnThapPhan.Text;
         }
+        
     }
     }
     
