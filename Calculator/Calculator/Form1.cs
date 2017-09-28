@@ -18,7 +18,7 @@ namespace Calculator
         }
 
         bool isTypingNumber = false;
-        enum PhepToan { None, Cong, Tru, Nhan, Chia};
+        enum PhepToan { None, Cong, Tru, Nhan, Chia };
         PhepToan pheptoan;
         private void NhapSo(object sender, EventArgs e)
         {
@@ -28,16 +28,16 @@ namespace Calculator
         private void NhapSo(string so)
         {
             if (isTypingNumber)
-                lblHienThi.Text = lblHienThi.Text + so ;
+                lblHienThi.Text = lblHienThi.Text + so;
             else
             {
-                lblHienThi.Text = so ;
+                lblHienThi.Text = so;
                 isTypingNumber = true;
             }
         }
 
         double nho;
-        
+
 
         private void NhapPhepToan(object sender, EventArgs e)
         {
@@ -46,17 +46,17 @@ namespace Calculator
             Button bnt = (Button)sender;
             switch (bnt.Text)
             {
-                case "+": pheptoan = PhepToan.Cong;break;
-                case "-": pheptoan = PhepToan.Tru;break;
-                case "*": pheptoan = PhepToan.Nhan;break;
-                case "/": pheptoan = PhepToan.Chia;break;
+                case "+": pheptoan = PhepToan.Cong; break;
+                case "-": pheptoan = PhepToan.Tru; break;
+                case "*": pheptoan = PhepToan.Nhan; break;
+                case "/": pheptoan = PhepToan.Chia; break;
 
             }
             nho = double.Parse(lblHienThi.Text);
             isTypingNumber = false;
 
         }
-        
+
         private void TinhKetQua()
         {
             //tinh toan dua tren:nhơ, pheptoan, lblHienThi.Text
@@ -64,10 +64,10 @@ namespace Calculator
             double ketqua = 0.0;
             switch (pheptoan)
             {
-                case PhepToan.Cong: ketqua = nho + tam;break;
-                case PhepToan.Tru: ketqua = nho - tam;break;
-                case PhepToan.Nhan: ketqua = nho * tam;break;
-                case PhepToan.Chia: ketqua = nho / tam;break;
+                case PhepToan.Cong: ketqua = nho + tam; break;
+                case PhepToan.Tru: ketqua = nho - tam; break;
+                case PhepToan.Nhan: ketqua = nho * tam; break;
+                case PhepToan.Chia: ketqua = nho / tam; break;
             }
             //gan ket qua tinh duoc len lblHienThi
             lblHienThi.Text = ketqua.ToString();
@@ -100,10 +100,10 @@ namespace Calculator
                     NhapSo("" + e.KeyChar);
                     break;
             }
-        
 
-           
-            }
+
+
+        }
 
         private void btnCan_Click(object sender, EventArgs e)
         {
@@ -134,7 +134,7 @@ namespace Calculator
         {
 
             nho = 0;
-            lblHienThi.Text="0.";
+            lblHienThi.Text = "0.";
         }
 
         private void btnThapPhan_Click(object sender, EventArgs e)
@@ -142,7 +142,7 @@ namespace Calculator
             if (lblHienThi.Text.Contains("."))
                 return;
             lblHienThi.Text += btnThapPhan.Text;
-        }
+        } 
         
     }
     }
