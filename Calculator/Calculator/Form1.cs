@@ -28,7 +28,11 @@ namespace Calculator
         private void NhapSo(string so)
         {
             if (isTypingNumber)
-                lblHienThi.Text = lblHienThi.Text + so;
+            {
+                if (lblHienThi.Text == "0")
+                    lblHienThi.Text = "";
+                lblHienThi.Text += so;
+            }
             else
             {
                 lblHienThi.Text = so;
@@ -134,13 +138,20 @@ namespace Calculator
         {
 
             nho = 0;
-            lblHienThi.Text = "0.";
+            lblHienThi.Text = "0";
         }
 
         private void btnThapPhan_Click(object sender, EventArgs e)
         {
             if (lblHienThi.Text.Contains("."))
+            {
+                if (lblHienThi.Text == "0.")
+                {
+                    lblHienThi.Text = "";
+                    NhapSo("0.");
+                }
                 return;
+            }
             lblHienThi.Text += btnThapPhan.Text;
         } 
         
